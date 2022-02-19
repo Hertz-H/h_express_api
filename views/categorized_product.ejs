@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<style>
+    body{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+        margin-top: 30px;
+         font-family:"BravaSlab-Regular";
+
+    }
+    *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+    }
+    .row_css{
+       
+        display: grid;
+        grid-template-columns: repeat(auto-fit,202px);
+       
+        justify-content: center;
+        gap: 15px;
+        /* width: 100%; */
+        /* display: flex; */
+        /* column-gap: 15px;  */
+        /* overflow-x: auto;
+        scroll-snap-type:x mandatory; */
+     
+    }
+    .container{
+        padding: 0 75px;
+        margin:auto;
+    }
+    .card{
+        /* flex-shrink: 0;
+        width:202px; */
+        /* height:280px; */
+        border:1px grey solid;
+        padding:10px 10px 25px 10px;
+        border: 1.3px #bfc2c969  solid;
+        border-radius: 3px;
+        
+    }
+    .card__header{
+        display:flex;
+        width:100%;
+        justify-content: space-between;
+    }
+    .card__icon{
+        color:#96999fb3;
+        height:33px;
+        width:33px;
+        border: 1.3px #bfc2c969  solid;
+        text-align: center;
+        font-size: .8rem;
+        line-height: 33px;
+        border-radius: 50%;
+    }
+    .card__job_time{
+        padding: 5px 8px;
+        background-color: #e7f7ee;
+        font-size: .8rem;
+        color:#28b661;
+        align-self: flex-start;
+        border-radius: 3px;
+    }
+.card__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:10px;
+    gap:10px;
+    text-align:center;
+   line-height: 1.5;
+    
+}
+  .card__img{
+    
+      width: 70px;
+      height:70px;
+    
+  }
+  .card__img img{
+      width: 100%;
+      height: 100%;
+
+  }
+  .card__title_first{
+    font-weight:600;
+    font-size: .9rem;
+  }
+  .card__title_second{
+    color:#8b8888;
+    font-size:.9rem
+
+  }
+  
+  .card__title_second i{
+    font-size: .8rem;
+    color:rgb(153, 150, 150);
+    margin-right:5px;
+  }
+  
+  .card__skills span{
+    display: inline-block;
+    padding:3px 6px;
+    background-color:#f1f3f5;
+    color: #103d59;
+    border-radius: 3px;
+    font-size:.7rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 7px;
+  }
+  .card__skills span:last-of-type{
+    background-color: #28b661;
+    color:white;
+    
+  }
+  .card__job_time--warning{
+      color:#ff9b20;
+      background-color:#fff8ec;
+  } 
+  .card__job_time--pink{
+      color:#ea2b33;
+      background-color:#ffeced;
+  } 
+  .card__job_time--purple{
+      color:#7460ee;;
+      background-color:#eeebff;
+  } 
+
+
+  
+
+    @media (max-width:768px){
+        .row_css{
+        
+        grid-template-columns: repeat(auto-fit,250px);
+     
+    
+       
+    }
+    /* .flex_row  {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+        align-items: flex-start;
+      
+    } */
+
+    }
+</style>
+<body>
+    <div class="container">
+    <div class="card_container row_css">
+    <% data.forEach(element => { %>
+        <div class="card">
+            <div class="card__header">
+                <span class="card__icon"> <i class="fas fa-heart"></i> </span>
+                <div class="card__job_time">  <%= element.category %></div>
+            </div>
+             <div class="card__content">
+                <i class="card__img">
+                    <img src=<%=element.images[0]%> alt="">
+                </i>
+                <div class="card__title">
+                    <span class="card__title_first">  <%= element.title %>  </span>
+                    <div class="card__title_second"> <i class="">$</i> <%= element.price %> </div>
+                  
+                </div>
+                
+            </div>
+            
+        </div>
+    <% }) %>
+   
+     
+
+    </div>
+   
+    </div>
+</div>
+</body>
+</html>
